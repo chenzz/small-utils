@@ -10,7 +10,7 @@
  * 4. 所有的图片 移动到 ~/Media/2-picture 文件下
  * 5. 除了以上这几个特殊文件夹外, ~/Media下其他所有的文件夹都删除
 
-## csdn-blog-migration-crawler
+## 2、csdn-blog-migration-crawler
 CSDN博客迁移，把CSDN博客上的内容爬取下来，存为本地的md文件，方便部署到hexo。
 
 具体需求如下：
