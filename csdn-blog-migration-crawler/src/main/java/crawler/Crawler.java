@@ -24,7 +24,15 @@ import java.util.List;
 public class Crawler {
     public static void main(String[] args) throws IOException {
 
-        String username = "timberwolf_2012";
+        //校验参数
+        if (args.length < 2) {
+            System.out.println("Please use the program like this:");
+            System.out.println("craw.Crawler timeberwolf_2012 /Users/chenzhongzheng/Desktop/blog/)");
+        }
+
+        String username = args[0];
+        String resultSavePath = args[1];
+
         String blogUrl = MessageFormat.format(CommonConstants.INDEX, username);
         Document doc = null;
         Remark remark = new Remark();
@@ -123,7 +131,7 @@ public class Crawler {
             articleContentMarkDown = articleContentMarkDown + MessageFormat.format(CommonConstants.POST_ORIGIN_URL, articleUrl);
 
             //把文章存储到本地
-            String filepath = CommonConstants.SAVE_PATH + StringUtils.eliminateSpecialStr4Filename(title) + ".md";
+            String filepath = resultSavePath + StringUtils.eliminateSpecialStr4Filename(title) + ".md";
             File file = new File(filepath);
             try (
                     FileWriter fileWriter = new FileWriter(file);
